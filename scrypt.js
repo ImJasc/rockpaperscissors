@@ -30,59 +30,101 @@ function getComputerChoice(){
 }
 
 function playRound (humanC, ComputerC){       
-    switch (humanC.toLowerCase()){
+    switch (humanC){
         case "paper":
             if (ComputerC == 'Rock'){
-                console.log("You Win! Paper beats Rock.");
+                divText.textContent = "You Win! Paper beats Rock.";
                 humanScore++;
+                playScore.textContent = humanScore;
+                if (humanScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }                
             }else if (ComputerC == 'Paper'){
-                console.log("It's a Tie! Both players choosed Paper.");
+                divText.textContent = "It's a Tie! Both players choosed Paper.";
             }else{
-                console.log("You lose! Scissors beats Paper.");
+                divText.textContent = "You lose! Scissors beats Paper.";
                 computerScore++;
+                comScore.textContent = computerScore;
+                if (computerScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }              
             }
         break;
         case "scissors":
             if (ComputerC == "Paper"){
-                console.log("You Win! Scissors beats Paper.");
-                humanScore++
+                divText.textContent = "You Win! Scissors beats Paper.";
+                humanScore++;
+                playScore.textContent = humanScore;
+                if (humanScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }              
             }else if (ComputerC == "Scissors"){
-                console.log("It's a Tie! Both players choosed Scissors.");
+                divText.textContent = "It's a Tie! Both players choosed Scissors.";
             }else{
-                console.log("You lose! Rock beats Paper.");
+                divText.textContent = "You lose! Rock beats Paper.";
                 computerScore++;
+                comScore.textContent = computerScore;
+                if (computerScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }              
             }
         break;
         case "rock":
             if (ComputerC == "Scissors"){
-                console.log("You Win! Rock beats Scissors.");
-                humanC++;
+                divText.textContent = "You Win! Rock beats Scissors.";
+                humanScore++;
+                playScore.textContent = humanScore;
+                if (humanScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }              
             }else if (ComputerC == "Rock"){
-                console.log("It's a Tie! Both players choosed Rock.");
+                divText.textContent = "It's a Tie! Both players choosed Rock.";
             }else{
-                console.log("You lose! Paper beats Rock.");
+                divText.textContent = "You lose! Paper beats Rock.";
                 computerScore++;
+                comScore.textContent = computerScore;
+                if (computerScore === 5) {
+                    playAgain();
+                }else{
+                    playGame();
+                }              
             }
-        break;  
-        default:
-            console.log("Either you misspelled the word or your choose wasn't an option. Round skipped.")                        
-            break;                      
+        break;                       
     }
 }
 
-function playGame (){   
-    const computerSelection = getComputerChoice();
-    const humanSelection = humanC
-    playRound(humanSelection, computerSelection);
+function playGame (){       
+    const computerSelection = getComputerChoice();    
+    btnRock.onclick = function () {playRound("rock", computerSelection)};
+    btnPaper.onclick = function () {playRound("paper", computerSelection)};
+    btnScissors.onclick = function () {playRound("scissors", computerSelection)};        
 }
 
 function makeVisibleTheInvisible(){
+    humanScore = 0;
+    computerScore = 0;
+    comScore.textContent = computerScore;
+    playScore.textContent = humanScore;
     btnContainer.style.display = "flex";
     scoreContainer.style.display = "flex";
     divText.textContent = "Choose: Rock, Paper or Scissors?";
-    btnStart.style.display = "none";
+    btnStart.style.display = "none"; 
+    playGame() 
 }
 
+
+
 btnStart.onclick = function(){makeVisibleTheInvisible()};
+
 
 
