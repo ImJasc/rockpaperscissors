@@ -122,6 +122,17 @@ function makeVisibleTheInvisible(){
     playGame() 
 }
 
+function playAgain(){
+    btnContainer.style.display = "none";
+    btnStart.style.display = "flex";
+    btnStart.textContent = "Play Again";
+    btnStart.style.cssText = "margin-top: 150px";    
+    if (humanScore === 5){
+        divText.textContent = "Congratulations! You Won.";
+    }else if (computerScore === 5){
+        divText.textContent = "Sadly, you lost. Want to try again?";
+    }
+}
 
 
 btnStart.onclick = function(){makeVisibleTheInvisible()};
