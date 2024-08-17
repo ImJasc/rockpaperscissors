@@ -2,6 +2,12 @@ let humanScore = 0, computerScore = 0;
 const btnRock = document.querySelector("button#rock");
 const btnPaper = document.querySelector("button#paper");
 const btnScissors = document.querySelector("button#scissors");
+const btnStart = document.querySelector("button#start");
+const playScore = document.querySelector("p#playScore");
+const comScore = document.querySelector("p#comScore");
+const btnContainer = document.querySelector("div#btnContainer");
+const scoreContainer = document.querySelector("div#scoreContainer");
+const divText = document.querySelector("div#text");
 
 function getComputerChoice(){
     let CC = Math.floor(Math.random() * 3);
@@ -64,10 +70,19 @@ function playRound (humanC, ComputerC){
     }
 }
 
-function playGame (humanC){   
+function playGame (){   
     const computerSelection = getComputerChoice();
     const humanSelection = humanC
     playRound(humanSelection, computerSelection);
 }
+
+function makeVisibleTheInvisible(){
+    btnContainer.style.display = "flex";
+    scoreContainer.style.display = "flex";
+    divText.textContent = "Choose: Rock, Paper or Scissors?";
+    btnStart.style.display = "none";
+}
+
+btnStart.onclick = function(){makeVisibleTheInvisible()};
 
 
