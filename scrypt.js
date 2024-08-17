@@ -1,3 +1,8 @@
+let humanScore = 0, computerScore = 0;
+const btnRock = document.querySelector("button#rock");
+const btnPaper = document.querySelector("button#paper");
+const btnScissors = document.querySelector("button#scissors");
+
 function getComputerChoice(){
     let CC = Math.floor(Math.random() * 3);
     let ComChoice;
@@ -17,8 +22,6 @@ function getComputerChoice(){
     }
     return ComChoice;    
 }
-
-let humanScore = 0, computerScore = 0;
 
 function playRound (humanC, ComputerC){       
     switch (humanC.toLowerCase()){
