@@ -1,0 +1,35 @@
+body{
+    background: #1E201E;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnContainer{
+    display: flex;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+button{
+    font-size: 36px;
+    padding: 20px;
+    color: #ecdfcc;
+    background-color: #697565;
+    border-radius: 8px;
+}
+
+#rock{
+    /*176.031*82*/
+    padding-left: 47px;
+    padding-right: 47px;
+}
+
+#paper{
+    padding-left: 40px;
+    padding-right: 40px;
+}
