@@ -10,7 +10,7 @@ body{
 }
 
 #btnContainer{
-    display: flex;
+    display: none;
     gap: 60px;
     margin-bottom: 100px;
 }
