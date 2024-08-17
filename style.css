@@ -21,6 +21,7 @@ button{
     color: #ecdfcc;
     background-color: #697565;
     border-radius: 8px;
+    transition: background-color 0.7s;
 }
 
 #rock{
@@ -32,4 +33,8 @@ button{
 #paper{
     padding-left: 40px;
     padding-right: 40px;
+}
+
+button:hover{
+    background-color: #3c3d37;
 }

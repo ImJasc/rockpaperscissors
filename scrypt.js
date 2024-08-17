@@ -66,17 +66,10 @@ function playRound (humanC, ComputerC){
     }
 }
 
-function playGame (){    
-    /*for (var index = 0; index < 5; index++) {        
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection)            
-    }    
-    if (humanScore > computerScore){
-        return "Congratulations! You Won."
-    }else{
-        return "Unfontunately, You Lost."
-    }*/
-   
+function playGame (humanC){   
+    const computerSelection = getComputerChoice();
+    const humanSelection = humanC
+    playRound(humanSelection, computerSelection);
 }
-console.log(playGame());
+
+
