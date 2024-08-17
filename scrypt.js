@@ -18,11 +18,6 @@ function getComputerChoice(){
     return ComChoice;    
 }
 
-function getHumanChoice(){
-    let HC = prompt ("Choose between Rock, Paper and Scissors:")
-    return HC;
-}
-
 let humanScore = 0, computerScore = 0;
 
 function playRound (humanC, ComputerC){       
