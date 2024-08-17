@@ -35,6 +35,11 @@ button{
     padding-right: 40px;
 }
 
+#start{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 button:hover{
     background-color: #3c3d37;
 }
